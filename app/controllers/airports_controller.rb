@@ -46,6 +46,6 @@ class AirportsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def airport_params
-      params.require(:airport).permit(:name, :code, :country, :lat, :lng, :image, :trip_id)
+      params.require(:airport).permit(:name, :code, :country, :lat, :lng, :image, trip_ids:[])
     end
 end

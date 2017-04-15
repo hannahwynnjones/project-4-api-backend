@@ -17,7 +17,7 @@ class TripsController < ApplicationController
   # POST /trips
   def create
     @trip = Trip.new(trip_params)
-    @event.user= current_user
+    @trip.user= current_user
 
 
     if @trip.save
@@ -51,6 +51,6 @@ class TripsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def trip_params
-      params.require(:trip).permit(:name, :description, :user_id, attendee_ids:[])
+      params.require(:trip).permit(:name, :description, :user_id, :date_one, :date_two, :date_three, attendee_ids:[], airport_ids:[])
     end
 end

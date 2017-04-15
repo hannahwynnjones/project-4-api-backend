@@ -1,7 +1,7 @@
 #USERS
 
 h = User.create!(
-username: "h",
+username: "husername",
 email: "h@h",
 first_name: "hannah",
 second_name: "wj",
@@ -11,7 +11,7 @@ password_confirmation: "p"
 )
 
 w = User.create!(
-username: "w",
+username: "wusername",
 email: "w@w",
 first_name: "hannah",
 second_name: "wj",
@@ -21,7 +21,7 @@ password_confirmation: "p"
 )
 
 j = User.create!(
-username: "j",
+username: "jusername",
 email: "j@j",
 first_name: "hannah",
 second_name: "wj",
@@ -31,7 +31,7 @@ password_confirmation: "p"
 )
 
 hannah = User.create!(
-username: "hannah",
+username: "hannahusername",
 email: "han@han",
 first_name: "hannah",
 second_name: "wj",
@@ -39,18 +39,6 @@ image: "https://thumbs.dreamstime.com/x/lovely-grey-cat-banner-2961103.jpg",
 password: "p",
 password_confirmation: "p"
 )
-
-#===============TRIPS ===================================================
-
-# test = Trip.create!(
-#   name: "test",
-#   user: hannah,
-#   attendees: [h, w],
-#   dates: [(2017, 5, 10), (2017, 5, 25), (2017, 6, 10)],
-#   airports: [lhr, syd, cdg, lhr]
-#   )
-
-#=================COMMENTS - May not add these seeds======================
 
 #================AIRPORTS - =======will add to these later==================
 
@@ -66,3 +54,18 @@ lhr = Airport.create!(name: "London Heathrow", country: "UK", code: "LHR", lat: 
 bhx = Airport.create!(name: "Birmingham", country: "UK", code: "BHX", lat: "52.4862", lng: "-1.8904", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Bullring_Bull.jpg/800px-Bullring_Bull.jpg")
 man = Airport.create!(name: "Manchester", country: "UK", code: "MAN", lat: "53.3588", lng: "-2.2727", image: "http://i.telegraph.co.uk/multimedia/archive/01396/old_trafford_1396521b.jpg")
 gla = Airport.create!(name: "Edinburgh", country: "UK", code: "EDI", lat: "55.9508", lng: "-3.3615", image: "http://www.edinburghspotlight.com/wp-content/uploads/2011/10/P1030026.jpg")
+
+#===============TRIPS ===================================================
+
+test = Trip.create!(
+  name: "test",
+  user: hannah,
+  attendees: [h, w],
+  # dates: [Date.new(2017, 4, 28), Date.new(2017, 5, 10), Date.new(2017, 4, 28)],
+  date_one: DateTime.new(2017, 3, 28),
+  date_two: DateTime.new(2017, 5, 10),
+  date_three: DateTime.new(2017, 4, 28),
+  airports: [lgw, cdg, lgw]
+  )
+
+  #=================COMMENTS - May not add these seeds======================
