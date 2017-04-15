@@ -57,8 +57,9 @@ gla = Airport.create!(name: "Edinburgh", country: "UK", code: "EDI", lat: "55.95
 
 #===============TRIPS ===================================================
 
-test = Trip.create!(
-  name: "test",
+test1 = Trip.create!(
+  name: "testParis",
+  description: "shopping trip",
   user: hannah,
   attendees: [h, w],
   # dates: [Date.new(2017, 4, 28), Date.new(2017, 5, 10), Date.new(2017, 4, 28)],
@@ -67,5 +68,17 @@ test = Trip.create!(
   date_three: DateTime.new(2017, 4, 28),
   airports: [lgw, cdg, lgw]
   )
+
+  test2 = Trip.create!(
+    name: "testHK",
+    description: "Hong kong baby!",
+    user: h,
+    attendees: [hannah, w, j],
+    # dates: [Date.new(2017, 4, 28), Date.new(2017, 5, 10), Date.new(2017, 4, 28)],
+    date_one: DateTime.new(2017, 2, 18),
+    date_two: DateTime.new(2017, 5, 10),
+    date_three: DateTime.new(2017, 6, 20),
+    airports: [lhr, hkg, lhr]
+    )
 
   #=================COMMENTS - May not add these seeds======================

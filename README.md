@@ -6,13 +6,14 @@ Firstly I set up API using Ruby on Rails. I created the database, scaffolded the
 
 As I added the serialisers after scaffolding, I had to add attributes as well as the relationships to the serialisers .
 
-
-*****had to add attributes to serialisers as well  -check password_digest is right
-
 I then added validations to the user model so that the username must always be present and the email is unique.
 
 Seeds
-  - lat and lng are integers but are not accurate!!!
+  - added users, airports and 2 trips.
+
+Fleshed out front-end: new, show, index, edit pages, login ages register pages.
+
+Added skyscanner api:  added new controller,
 
 This README would normally document whatever steps are necessary to get the
 application up and running.

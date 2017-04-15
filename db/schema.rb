@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170415115950) do
+ActiveRecord::Schema.define(version: 20170415151058) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,6 +54,8 @@ ActiveRecord::Schema.define(version: 20170415115950) do
     t.date     "date_one"
     t.date     "date_two"
     t.date     "date_three"
+    t.integer  "airport_id"
+    t.index ["airport_id"], name: "index_trips_on_airport_id", using: :btree
     t.index ["user_id"], name: "index_trips_on_user_id", using: :btree
   end
 
@@ -76,5 +78,6 @@ ActiveRecord::Schema.define(version: 20170415115950) do
   add_foreign_key "airports", "trips"
   add_foreign_key "comments", "trips"
   add_foreign_key "comments", "users"
+  add_foreign_key "trips", "airports"
   add_foreign_key "trips", "users"
 end
