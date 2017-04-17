@@ -16,7 +16,10 @@ class TripsController < ApplicationController
 
   # POST /trips
   def create
-    @trip = Trip.new(trip_params)
+
+    @trip = Trip.new(Uploader.upload(trip_params))
+
+    # @trip = Trip.new(trip_params)
     @trip.user= current_user
 
 
@@ -29,8 +32,12 @@ class TripsController < ApplicationController
 
   # PATCH/PUT /trips/1
   def update
+
     return render json: { errors: ["Unauthorised"] } if @trip.user !=current_user
-    if @trip.update(trip_params)
+
+    if
+      # @trip = Trip.update(Uploader.upload(trip_params))
+       @trip.update(trip_params)
       render json: @trip
     else
       render json: @trip.errors, status: :unprocessable_entity
@@ -51,6 +58,6 @@ class TripsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def trip_params
-      params.require(:trip).permit(:name, :description, :user_id, :date_one, :date_two, :date_three, attendee_ids:[], airport_ids:[])
+      params.require(:trip).permit(:name, :description, :user_id, :date_one, :date_two, :date_three, :base64, attendee_ids:[], airport_ids:[])
     end
 end

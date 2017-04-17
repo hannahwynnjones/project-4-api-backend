@@ -3,7 +3,10 @@ class TripSerializer < ActiveModel::Serializer
   has_many :attendees
   has_many :comments
   has_many :airports
-  attributes :id, :name, :description, :attendee_ids, :airport_ids, :date_one, :date_two, :date_three
-end
+  attributes :id, :name, :description, :image_src, :attendee_ids, :airport_ids, :date_one, :date_two, :date_three
 
-#don't need airports and airport ids???
+  def image_src
+      object.image.url
+  end
+
+end

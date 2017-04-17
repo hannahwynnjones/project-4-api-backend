@@ -15,6 +15,8 @@ Fleshed out front-end: new, show, index, edit pages, login ages register pages.
 
 Added skyscanner api:  added new controller,
 
+added the image uploader to the login
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
