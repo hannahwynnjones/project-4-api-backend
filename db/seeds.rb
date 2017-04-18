@@ -1,3 +1,7 @@
+[User, Trip, Leg, Airport, Comment].each do |model|
+  ActiveRecord::Base.connection.execute("TRUNCATE #{model.table_name} RESTART IDENTITY CASCADE")
+end
+
 #USERS
 
 h = User.create!(
@@ -62,23 +66,41 @@ test1 = Trip.create!(
   description: "shopping trip",
   user: hannah,
   attendees: [h, w],
-  # dates: [Date.new(2017, 4, 28), Date.new(2017, 5, 10), Date.new(2017, 4, 28)],
-  date_one: DateTime.new(2017, 3, 28),
-  date_two: DateTime.new(2017, 5, 10),
-  date_three: DateTime.new(2017, 4, 28),
-  airports: [lgw, cdg, lgw]
+  start_date: DateTime.new(2017, 3, 28),
+  airport: lgw
   )
 
-  test2 = Trip.create!(
-    name: "testHK",
-    description: "Hong kong baby!",
-    user: h,
-    attendees: [hannah, w, j],
-    # dates: [Date.new(2017, 4, 28), Date.new(2017, 5, 10), Date.new(2017, 4, 28)],
-    date_one: DateTime.new(2017, 2, 18),
-    date_two: DateTime.new(2017, 5, 10),
-    date_three: DateTime.new(2017, 6, 20),
-    airports: [lhr, hkg, lhr]
-    )
+  # test2 = Trip.create!(
+  #   name: "testHK",
+  #   description: "Hong kong baby!",
+  #   user: h,
+  #   attendees: [hannah, w, j],
+  #   # dates: [Date.new(2017, 4, 28), Date.new(2017, 5, 10), Date.new(2017, 4, 28)],
+  #   date_one: DateTime.new(2017, 2, 18),
+  #   date_two: DateTime.new(2017, 5, 10),
+  #   date_three: DateTime.new(2017, 6, 20),
+  #   airports: [lhr, hkg, lhr]
+  #   )
+
+#/////////////////////
+
+leg1 = Leg.create(
+  trip: test1,
+  airport: hkg,
+  start_date: DateTime.new(2017, 4, 28),
+  price: 139,
+  airline: "BA"
+)
+
+leg2 = Leg.create(
+  trip: test1,
+  airport: syd,
+  start_date: DateTime.new(2017, 5, 28),
+  price: 129,
+  airline: "BA"
+)
+
+
+
 
   #=================COMMENTS - May not add these seeds======================

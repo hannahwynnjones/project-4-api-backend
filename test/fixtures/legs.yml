@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  airport: one
+  start_date: 2017-04-18
+  price: 1
+  airline: MyString
+
+two:
+  airport: two
+  start_date: 2017-04-18
+  price: 1
+  airline: MyString

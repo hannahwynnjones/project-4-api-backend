@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170417122655) do
+ActiveRecord::Schema.define(version: 20170418104801) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,15 +22,8 @@ ActiveRecord::Schema.define(version: 20170417122655) do
     t.float    "lat"
     t.float    "lng"
     t.string   "image"
-    t.integer  "trip_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["trip_id"], name: "index_airports_on_trip_id", using: :btree
-  end
-
-  create_table "airports_trips", id: false, force: :cascade do |t|
-    t.integer "airport_id", null: false
-    t.integer "trip_id",    null: false
   end
 
   create_table "comments", force: :cascade do |t|
@@ -43,19 +36,27 @@ ActiveRecord::Schema.define(version: 20170417122655) do
     t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
   end
 
+  create_table "legs", force: :cascade do |t|
+    t.integer  "airport_id"
+    t.date     "start_date"
+    t.integer  "price"
+    t.string   "airline"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer  "trip_id"
+    t.index ["airport_id"], name: "index_legs_on_airport_id", using: :btree
+    t.index ["trip_id"], name: "index_legs_on_trip_id", using: :btree
+  end
+
   create_table "trips", force: :cascade do |t|
     t.string   "name"
     t.string   "description"
     t.integer  "user_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.string   "airport_one"
-    t.string   "airport_two"
-    t.date     "date_one"
-    t.date     "date_two"
-    t.date     "date_three"
     t.integer  "airport_id"
     t.string   "image"
+    t.date     "start_date"
     t.index ["airport_id"], name: "index_trips_on_airport_id", using: :btree
     t.index ["user_id"], name: "index_trips_on_user_id", using: :btree
   end
@@ -76,9 +77,10 @@ ActiveRecord::Schema.define(version: 20170417122655) do
     t.string   "password_digest"
   end
 
-  add_foreign_key "airports", "trips"
   add_foreign_key "comments", "trips"
   add_foreign_key "comments", "users"
+  add_foreign_key "legs", "airports"
+  add_foreign_key "legs", "trips"
   add_foreign_key "trips", "airports"
   add_foreign_key "trips", "users"
 end
