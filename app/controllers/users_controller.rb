@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   def index
     @users = User.all
 
-    render json: @users, include: ['trips_attending.comments', 'trips_created.comments', 'trips_attending.comments.user', 'trips_created.comments.user']
+    render json: @users, include: ['trips_attending.comments', 'trips_created.comments', 'trips_attending.comments.user', 'trips_created.comments.user', 'image_src']
   end
 
   # GET /users/1
