@@ -84,7 +84,7 @@ test1 = Trip.create!(
 
 #/////////////////////
 
-leg1 = Leg.create(
+leg1 = Leg.create!(
   trip: test1,
   airport: hkg,
   start_date: DateTime.new(2017, 4, 28),
@@ -92,7 +92,7 @@ leg1 = Leg.create(
   airline: "BA"
 )
 
-leg2 = Leg.create(
+leg2 = Leg.create!(
   trip: test1,
   airport: syd,
   start_date: DateTime.new(2017, 5, 28),

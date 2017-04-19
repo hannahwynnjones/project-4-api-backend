@@ -6,7 +6,7 @@ class TripsController < ApplicationController
   def index
     @trips = Trip.all
 
-    render json: @trips
+    render json: @trips, include: ['user']
   end
 
   # GET /trips/1

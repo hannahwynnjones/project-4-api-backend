@@ -2,16 +2,18 @@ require 'date'
 
 class SkyscannerController < ApplicationController
   def flights
+    date = params[:departDate].split('T').first
 
-    # tomorrow = Date.today + 1
     base_url = 'http://partners.api.skyscanner.net/apiservices/browsequotes/v1.0/UK/GBP/en-GB/'
 
-    response = HTTParty.get("#{base_url}#{params[:origin]}#{params[:destination]}/#{departDate}", {
+    response = HTTParty.get("#{base_url}#{params[:origin]}/#{params[:destination]}/#{date}", {
      query: {
         apiKey: ENV["SKYSCANNER_API_KEY"]
       },
       headers: { 'Accept' => 'application/json'} #telling them that we want json bac from the api
     })
+
+    puts "************ response ********** #{response}"
 
    render json: response, status: :ok
   end
