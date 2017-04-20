@@ -11,7 +11,7 @@ class TripsController < ApplicationController
 
   # GET /trips/1
   def show
-    render json: @trip, include: ['legs.airport', 'user']
+    render json: @trip, include: ['legs.airport','trip.leg.airport.lng','trip.leg.airport.lat', 'user']
   end
 
   # POST /trips
