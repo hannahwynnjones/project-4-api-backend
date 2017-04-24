@@ -5,44 +5,44 @@ end
 #USERS
 
 h = User.create!(
-username: "husername",
+username: "hwj",
 email: "h@h",
-first_name: "hannah",
-second_name: "wj",
-image: "https://cdn.pixabay.com/photo/2012/04/01/12/24/penguin-23159_960_720.png",
+first_name: "Hannah",
+second_name: "Wynn Jones",
+# image: "https://cdn.pixabay.com/photo/2012/04/01/12/24/penguin-23159_960_720.png",
 password: "p",
 password_confirmation: "p"
 )
 
-w = User.create!(
-username: "wusername",
-email: "w@w",
-first_name: "hannah",
-second_name: "wj",
-image: "https://cdn.pixabay.com/photo/2014/04/03/00/35/giraffe-308771_960_720.png",
-password: "p",
-password_confirmation: "p"
-)
-
-j = User.create!(
-username: "jusername",
-email: "j@j",
-first_name: "hannah",
-second_name: "wj",
-image: "http://images6.fanpop.com/image/photos/33000000/pikachu-pikachu-33005706-448-500.png",
-password: "p",
-password_confirmation: "p"
-)
-
-hannah = User.create!(
-username: "hannahusername",
-email: "han@han",
-first_name: "hannah",
-second_name: "wj",
-image: "https://thumbs.dreamstime.com/x/lovely-grey-cat-banner-2961103.jpg",
-password: "p",
-password_confirmation: "p"
-)
+# w = User.create!(
+# username: "wusername",
+# email: "w@w",
+# first_name: "hannah",
+# second_name: "wj",
+# image: "https://cdn.pixabay.com/photo/2014/04/03/00/35/giraffe-308771_960_720.png",
+# password: "p",
+# password_confirmation: "p"
+# )
+#
+# j = User.create!(
+# username: "jusername",
+# email: "j@j",
+# first_name: "hannah",
+# second_name: "wj",
+# image: "http://images6.fanpop.com/image/photos/33000000/pikachu-pikachu-33005706-448-500.png",
+# password: "p",
+# password_confirmation: "p"
+# )
+#
+# hannah = User.create!(
+# username: "hannahusername",
+# email: "han@han",
+# first_name: "hannah",
+# second_name: "wj",
+# image: "https://thumbs.dreamstime.com/x/lovely-grey-cat-banner-2961103.jpg",
+# password: "p",
+# password_confirmation: "p"
+# )
 
 
 #================AIRPORTS - =======will add to these later==================
@@ -669,7 +669,7 @@ test1 = Trip.create!(
   name: "testParis",
   description: "shopping trip",
   user: hannah,
-  attendees: [h, w],
+  attendees: [],
   start_date: DateTime.new(2017, 3, 28),
   airport: lgw
   )
