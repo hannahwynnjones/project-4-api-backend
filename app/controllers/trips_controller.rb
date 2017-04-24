@@ -35,9 +35,8 @@ class TripsController < ApplicationController
 
     return render json: { errors: ["Unauthorised"] } if @trip.user !=current_user
 
-    if
-       @trip = Trip.update(Uploader.upload(trip_params))
-      #  @trip.update(trip_params)
+    # if @trip = Trip.update(Uploader.upload(trip_params))
+    if @trip.update(Uploader.upload(trip_params))
       render json: @trip
     else
       render json: @trip.errors, status: :unprocessable_entity

@@ -11,7 +11,7 @@ class UsersController < ApplicationController
 
   # GET /users/1
   def show
-    render json: @user
+    render json: @user, include: ['trips_attending.comments', 'trips_created.comments', 'trips_attending.comments.user', 'trips_created.comments.user', 'image_src', 'trip']
   end
 
   # POST /users
@@ -47,10 +47,7 @@ class UsersController < ApplicationController
 
   # PATCH/PUT /users/1
   def update
-
-    @user = User.update(Uploader.upload(user_params))
-
-    if @user.update(user_params)
+    if @user.update(Uploader.upload(user_params))
       render json: @user
     else
       render json: @user.errors, status: :unprocessable_entity
