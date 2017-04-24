@@ -4,12 +4,12 @@ end
 
 #USERS
 
-h = User.create!(
+hannah = User.create!(
 username: "hwj",
 email: "h@h",
 first_name: "Hannah",
 second_name: "Wynn Jones",
-# image: "https://cdn.pixabay.com/photo/2012/04/01/12/24/penguin-23159_960_720.png",
+# image_src: "https://cdn.pixabay.com/photo/2012/04/01/12/24/penguin-23159_960_720.png",
 password: "p",
 password_confirmation: "p"
 )
