@@ -604,7 +604,7 @@ Airport.create!(name: "Manila Ninoy Aquino ", country: "", code: "MNL", lat: "",
 Airport.create!(name: "Mactan-Cebu International ", country: "", code: "CEB", lat: "", lng: "", continent:"Southeast Asia", image: "")
 Airport.create!(name: "Surabaya ", country: "", code: "SUB", lat: "", lng: "", continent:"Southeast Asia", image: "")
 Airport.create!(name: "Macau ", country: "", code: "MFM", lat: "", lng: "", continent:"Southeast Asia", image: "")
-Airport.create!(name: "Hanoi ", country: "", code: "HAN", lat: "", lng: "", continent:"Southeast Asia", image: "")
+Airport.create!(name: "Hanoi ", country: "", code: "HAN", lat: "", lng: "", continent:"Southeast Asia", image: "http://www.shoreexcursions.asia/wp-content/uploads/2014/12/Halong-Bay-Cruise-and-Hanoi-Capital-%E2%80%93-2-Days.jpg")
 
 # #other airports
 # Airport.create!(name: "Makassar ", country: "", code: "UPG", lat: "", lng: "", continent:"Southeast Asia", image: "")
